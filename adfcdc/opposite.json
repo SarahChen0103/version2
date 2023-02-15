@@ -1,0 +1,244 @@
+{
+	"name": "opposite",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "dbo.Cars",
+						"properties": {
+							"schema": [
+								{
+									"name": "ID",
+									"dataType": "integer"
+								},
+								{
+									"name": "Name",
+									"dataType": "string"
+								},
+								{
+									"name": "Model",
+									"dataType": "string"
+								},
+								{
+									"name": "Length",
+									"dataType": "integer"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "Cars"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "enableNativeCdc",
+									"value": true
+								},
+								{
+									"name": "netChanges",
+									"value": true
+								},
+								{
+									"name": "skipInitialLoad",
+									"value": true
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "SQLDemo",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "dbo.Cars",
+						"properties": {
+							"schema": [
+								{
+									"name": "ID",
+									"dataType": "integer"
+								},
+								{
+									"name": "Name",
+									"dataType": "string"
+								},
+								{
+									"name": "Model",
+									"dataType": "string"
+								},
+								{
+									"name": "Length",
+									"dataType": "integer"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "format",
+									"value": "table"
+								},
+								{
+									"name": "store",
+									"value": "sqlserver"
+								},
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "Cars"
+								},
+								{
+									"name": "databaseType",
+									"value": "databaseType"
+								},
+								{
+									"name": "database",
+									"value": "database"
+								},
+								{
+									"name": "deletable",
+									"value": false
+								},
+								{
+									"name": "insertable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": false
+								},
+								{
+									"name": "upsertable",
+									"value": false
+								},
+								{
+									"name": "skipDuplicateMapInputs",
+									"value": true
+								},
+								{
+									"name": "skipDuplicateMapOutputs",
+									"value": true
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "AzureSqlDatabase1",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "dbo.Cars",
+						"sourceEntityName": "dbo.Cars",
+						"sourceConnectionReference": {
+							"connectionName": "SQLDemo",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": "ID",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "ID",
+										"entity": "dbo.Cars",
+										"entityConnectionReference": {
+											"connectionName": "SQLDemo",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Length",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Length",
+										"entity": "dbo.Cars",
+										"entityConnectionReference": {
+											"connectionName": "SQLDemo",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Model",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Model",
+										"entity": "dbo.Cars",
+										"entityConnectionReference": {
+											"connectionName": "SQLDemo",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Name",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "Name",
+										"entity": "dbo.Cars",
+										"entityConnectionReference": {
+											"connectionName": "SQLDemo",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15
+			},
+			"mode": "Microbatch"
+		},
+		"status": "Stopped"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "sarahNewDemoAll",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "789ec89d-9ef0-4cf0-a28a-ba9af1033405",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

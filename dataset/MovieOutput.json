@@ -1,0 +1,31 @@
+{
+	"name": "MovieOutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Title",
+				"type": "varchar"
+			},
+			{
+				"name": "Genres",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Movies"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
